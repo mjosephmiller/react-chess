@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import Knight from './knight';
-import Square from './square';
+import Board from './board';
 import './index.css';
 
+
+
 ReactDOM.render(
-  <Square black>
-    <Knight />
-  </Square>,
+  <Board knightPosition={[0, 0]} />,
   document.getElementById('root')
-)
+);
