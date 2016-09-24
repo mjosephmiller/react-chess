@@ -29,7 +29,7 @@ class Board extends Component {
     const y = Math.floor(i / 8);
     return (
       <div key={i}
-           style={{ width: '12.5%', height: '12.5%' }}>
+           style={{ width: '100px', height: '100px' }}>
         <BoardSquare x={x}
                      y={y}>
           {this.renderPiece(x, y)}

@@ -5,6 +5,10 @@ import { ItemTypes } from './constants';
 import { DropTarget } from 'react-dnd';
 
 const squareTarget = {
+  canDrop(props) {
+    return canMoveKnight(props.x, props.y);
+  },
+
   drop(props) {
     moveKnight(props.x, props.y);
   }
@@ -25,8 +29,8 @@ class BoardSquare extends Component {
     return connectDropTarget(
       <div style={{
         position: 'relative',
-        width: '100%',
-        height: '100%'
+        width: '100px',
+        height: '100px'
       }}>
         <Square black={black}>
           {this.props.children}
@@ -36,8 +40,8 @@ class BoardSquare extends Component {
             position: 'absolute',
             top: 0,
             left: 0,
-            height: '100%',
-            width: '100%',
+            height: '100px',
+            width: '100px',
             zIndex: 1,
             opacity: 0.5,
             backgroundColor: 'yellow',
